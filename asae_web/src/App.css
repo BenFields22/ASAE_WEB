@@ -1,0 +1,51 @@
+h1,h2,h3{
+  margin-bottom: 2px;
+  margin-top:2px;
+}
+
+.leftSide{
+  width:35%;
+  float:left;
+  height:100%;
+}
+.rightSide{
+  width:65%;
+  float:right;
+  height:100%;
+}
+.MiddleOfPage{
+  overflow: auto;
+  width:100%;
+  min-width: 550px;
+  height:100%;
+}
+.Seperator{
+  border-top: solid 3px black;
+  margin-top:5px;
+  padding-top:10px;
+}
+
+.previewText{
+  width:90%;
+  height:200;
+}
+
+.TopOfPage{
+  text-align: center;
+  background-color: aquamarine;
+  min-width: 550px;
+  overflow: hidden;
+}
+
+.App{
+  min-width:550px;
+}
+
+.ProcessPanel{
+  border: solid 2px black;
+}
+
+.processData{
+  border: solid 1px black;
+}
+

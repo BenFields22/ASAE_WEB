@@ -1,0 +1,14 @@
+{
+  "name": "backendapi",
+  "version": "1.0.0",
+  "description": "Serve the front end react application with this api server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Benjamin Fields",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
