@@ -117,8 +117,8 @@ class App extends Component {
       doc.value += "<PROCESS "+this.state.processes[i].number + ">\n";
       doc.value += "<"+this.state.processes[i].time + ">\n";
       doc.value += "<"+this.state.processes[i].pos + ">\n";
+      doc.value += "<"+this.state.processes[i].down + ">\n";
       doc.value += "<"+this.state.processes[i].up + ">\n";
-      doc.value += "<"+this.state.processes[i].down + ".\n";
       doc.value += "</PROCESS "+this.state.processes[i].number + ">\n";
       if(i<size-1){
         doc.value +="\n";
@@ -181,20 +181,7 @@ class App extends Component {
         <div className="MiddleOfPage">
           <div className="leftSide">
             <button onClick={this.getViews}>View Count</button><br/>
-            <div className="Seperator"><h2>FORMAT:</h2></div>
-              
-              <h3>Distribution time</h3>
-                N:Average:stdDev<br/>  T:Low:Avg:Upper<br/>  U:Lower:Upper<br/>  C:Value<br/>
-              
-                <h3>Position Type</h3>
-              0-FRONT 1-MIDDLE 2-TERMINAL<br/> 
-              
-              <h3>DownStreamConnections</h3>
-              numberofConnection,
-              PID(percentage in three sig figs such as 0.00) buffer capacity with two digits, repeat<br/>
-              
-              <h3>UpstreamConnections</h3>
-              numberofConnections,(PID,Connecting Position index), repeat<br/>
+
               <div className="Seperator"><h2>MODEL DEFINITION</h2></div>
               Number of jobs:<br/>
               <input id="numJobs" type="text"></input><br/>
@@ -202,12 +189,23 @@ class App extends Component {
               Number of Processes:<br/>
               <input id = "numProcesses" type="text"></input><br/>
               <button onClick={this.defineProcesses} >Define</button><br/>
-              <h2>Process Panel</h2>
+              <div className="Seperator"><h2>Process Panel</h2></div>
               <ProcessPanel >
               {children}
               </ProcessPanel>
           </div>
           <div className = "rightSide">
+              <h2>FORMAT:</h2>
+              <h3>Distribution time</h3>
+                  N:Average:stdDev<br/>  T:Low:Avg:Upper<br/>  U:Lower:Upper<br/>  C:Value<br/>
+                <h3>Position Type</h3>
+              0-FRONT 1-MIDDLE 2-TERMINAL<br/> 
+              <h3>DownStreamConnections</h3>
+              numberofConnection 1 digit,
+              PID 2digits(percentage in three sig figs such as 0.00) buffer capacity with two digits, repeat<br/>
+              <h3>UpstreamConnections</h3>
+              numberofConnections 1 digit,(PID 2 digits,Connecting Position index), repeat<br/>
+            <div className="Seperator"><h2>Model.txt</h2></div>
             <div id="docPreview">
               <button onClick={this.preview}>PREVIEW</button>
               <button onClick={this.download}>DOWNLOAD</button>
@@ -215,7 +213,6 @@ class App extends Component {
               <button onClick={this.load}>LOAD</button>
               <div className="saveandload">
               </div>
-              <h2>Model.txt</h2>
               <textarea id="modelFile" className="previewText" rows="50" col="100" placeholder="Preview of Model.txt">
               </textarea>
             </div>
