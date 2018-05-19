@@ -52,32 +52,19 @@ addToProcesses = () =>{
 
   render(){
     return (
-      <div className="processData">{"***********PROCESS " + this.state.number}**********<br/>
-      <table>
-        <tbody>
-          
-          <tr>
-            <td>ProcessTime:</td>
-            <td><input type="text" onChange={this.updateProcessTime}></input><br/></td> 
-          </tr>
-          
-          <tr>
-            <td>Position type:</td>
-            <td><input type="text" onChange={this.updatePos}></input><br/></td> 
-          </tr>
-          
-          <tr>
-            <td>DownStreamConnections:</td>
-            <td><input type="text" onChange={this.updateDownstream}></input><br/></td> 
-          </tr>
-          
-          <tr>
-            <td>UpstreamConnections:</td>
-            <td><input type="text" onChange={this.updateUpstream}></input><br/></td> 
-          </tr>
-        </tbody>
+      <div className="processData">{"PROCESS " + this.state.number}<br/>
       
-      </table>
+          ProcessTime:<br/>
+          <input className="data" type="text" onChange={this.updateProcessTime}></input><br/>
+
+          Position type:<br/>
+          <input className="data" type="text" onChange={this.updatePos}></input><br/> 
+
+          DownStreamConnections:<br/>
+          <input className="data" type="text" onChange={this.updateDownstream}></input><br/> 
+
+          UpstreamConnections:<br/>
+          <input className="data" type="text" onChange={this.updateUpstream}></input><br/>
       <button onClick={this.addToProcesses}>ADD</button>
     </div>
     )

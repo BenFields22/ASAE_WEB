@@ -3,6 +3,10 @@ h1,h2,h3{
   margin-top:2px;
 }
 
+.data{
+  width:90%;
+}
+
 .leftSide{
   width:35%;
   float:left;
