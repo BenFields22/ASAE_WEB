@@ -3,58 +3,167 @@ h1,h2,h3{
   margin-top:2px;
 }
 
+body{
+  padding:0px;
+  margin:0px;
+}
+
 .data{
   width:90%;
 }
 
 .leftSide{
-  width:35%;
-  float:left;
-  height:100%;
-  border:solid 2px black;
+  margin-left:auto;
+  min-width: 220px;
+  overflow: hidden;
+  height:90vh;
+  padding-left:10px;
+  padding-right:10px;
+  background-color: white;
 }
 .rightSide{
-  width:63%;
-  float:right;
-  height:100%;
-  border:solid 2px black;
+  width:66%;
+  padding-right:10px;
+  display:flex;
+  flex-wrap: nowrap;
 }
 .MiddleOfPage{
-  overflow: auto;
   width:100%;
-  min-width: 550px;
-  height:100%;
+  display:flex;
+  flex-wrap: nowrap;
+  margin-top:10px;
+  margin-bottom:10px;
 }
 .Seperator{
-  border-top: solid 3px black;
   margin-top:5px;
+  width:100%;
   padding-top:10px;
 }
 
+#modelFile{
+  width:95%;
+}
+
 .previewText{
-  width:90%;
   height:200;
 }
 
 .TopOfPage{
-  text-align: center;
-  background-color: aquamarine;
-  min-width: 550px;
+  width:100%;
+  font-size: 24px;
+  color:white;
+  height: 35px;
+  background-color: #311557;
+  margin-top:30px;
   overflow: hidden;
+  text-align: center;
+}
+
+
+
+.BottomOfPage{
+  color:white;
+  font-size: 16px;
+  width:100%;
+  height:20px;
+  text-align: center;
+  margin-top:5px;
+  bottom: 0;
+  background-color: #311557;
+}
+
+.TopOfPage button{
+  float: right;
+  background-color:#c5b9d5;
 }
 
 .App{
-  min-width:550px;
+  padding:0px;
+  margin-top:-30px;
+  min-height: 100vh;
+  max-height: 100vh;
+  background-color:#1c053a;
+  width:100%;
+  min-width:860px;
+}
+
+#root{
+  padding:0px;
+  margin:0px;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+#docPreview{
+  margin-right:auto;
+  min-width: 200px;
+  background-color: white;
+  padding-left:10px;
+  padding-right:10px;
+  width:95%;
+}
+
+.FORMAT{
+  margin-left:20px;
+  margin-right:20px;
+  background-color:#c5b9d5;
+  padding-right:10px;
+  padding-left:10px;
+  height: fit-content;
+
 }
 
 .ProcessPanel{
+  overflow: auto;
+  height:stretch;
+  padding-bottom:300px;
 }
 
 .processData{
-  border: solid 1px black;
+  padding:10px;
+  margin-bottom:10px;
+  border:solid 1px #301557;
+  color:white;
+  border-radius:5px;
+  background-color:#311557;
+  font-size: 12px;
+}
+
+.processData h3{
+  text-align: center;
+  color: #c5b9d5;
+  font-size: 16px;
 }
 
 .hidden{
   display:none;
+}
+
+button{
+  margin:5px;
+  padding:5px;
+  background-color: #c5b9d5;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.TopOfPage button{
+  height:30px;
+  padding:1px;
+  margin:0px;
+  border-radius: 0px;
+}
+
+input{
+  height:25px;
+  border-radius: 5px;
+  margin-bottom: 1em;
+  margin-top:.5em;
+}
+
+p{
+  color:#555;
+  margin-top:2px;
+  padding-left:10px;
 }
 

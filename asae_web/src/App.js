@@ -56,7 +56,7 @@ addToProcesses = () =>{
 
   render(){
     return (
-      <div className={this.state.show}>{"PROCESS " + this.state.number}<br/>
+      <div className={this.state.show}><h3>{"Process " + this.state.number}</h3>
       
           ProcessTime:<br/>
           <input className="data" type="text" onChange={this.updateProcessTime}></input><br/>
@@ -179,51 +179,50 @@ class App extends Component {
     return (
       <div className="App">
         <div className="TopOfPage">
-          <h1>
+          <button onClick={this.getViews}>View Count</button>
           Auto Simulation Analysis Model Creator
-          </h1>
         </div>
         <div className="MiddleOfPage">
           <div className="leftSide">
-            <button onClick={this.getViews}>View Count</button><br/>
-
-              <div className="Seperator"><h2>MODEL DEFINITION</h2></div>
-              Number of jobs:<br/>
+              <div className="Seperator"><h2>Model Definition</h2></div>
+              Number of jobs<br/>
               <input id="numJobs" type="text"></input><br/>
 
-              Number of Processes:<br/>
+              Number of Processes<br/>
               <input id = "numProcesses" type="text"></input><br/>
-              <button onClick={this.defineProcesses} >Define</button><br/>
+              <button onClick={this.defineProcesses} >DEFINE</button><br/>
               <div className="Seperator"><h2>Process Panel</h2></div>
               <ProcessPanel >
               {children}
               </ProcessPanel>
           </div>
           <div className = "rightSide">
-              <h2>FORMAT:</h2>
+          <div className="FORMAT">
+          <div className="Seperator"><h2>Format</h2></div>
+          
               <h3>Distribution time</h3>
-                  N:Average:stdDev<br/>  T:Low:Avg:Upper<br/>  U:Lower:Upper<br/>  C:Value<br/>
+                 <p> N:Average:stdDev<br/>  T:Low:Avg:Upper<br/>  U:Lower:Upper<br/>  C:Value<br/></p>
                 <h3>Position Type</h3>
-              0-FRONT 1-MIDDLE 2-TERMINAL<br/> 
+                <p>0-FRONT 1-MIDDLE 2-TERMINAL<br/> </p>
               <h3>DownStreamConnections</h3>
-              number,PID(percentage)buffer_capacity,...<br/>
-              X,XX(X.XX)XX,...<br/>
+              <p>number,PID(percentage)buffer_capacity,...<br/>
+              X,XX(X.XX)XX,...<br/></p>
               <h3>UpstreamConnections</h3>
-              Number,(PID,Buffer_Index),...<br/>
-              X,(XX,X),...<br/>
-            <div className="Seperator"><h2>Model.txt</h2></div>
+              <p>Number,(PID,Buffer_Index),...<br/>
+              X,(XX,X),...<br/></p>
+          
+          </div>
             <div id="docPreview">
-              <button onClick={this.preview}>PREVIEW</button>
+            <div className="Seperator"><h2>Model.txt</h2></div>
               <button onClick={this.download}>DOWNLOAD</button>
-              <button onClick={this.save}>SAVE</button>
-              <button onClick={this.load}>LOAD</button>
               <div className="saveandload">
               </div>
-              <textarea id="modelFile" className="previewText" rows="50" col="100" placeholder="Preview of Model.txt">
+              <textarea id="modelFile" className="previewText" rows="42" placeholder="Preview of Model.txt">
               </textarea>
             </div>
           </div>
         </div>
+         <div className="BottomOfPage">© Benjamin Fields 2018</div>
       </div>
     );
   }
