@@ -1,5 +1,10 @@
 var express = require('express');
+var cors = require('cors');
 var app = express();
+
+app.use(cors({
+  origin: 'http://www.localhost:5000'
+}));
 
 var count = 0;
 var saved = [];
