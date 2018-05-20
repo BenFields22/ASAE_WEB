@@ -77,6 +77,7 @@ addToProcesses = () =>{
 
 const ProcessPanel = props => (
   <div className="ProcessPanel">
+    <h2>Process Panel</h2>
     <div id="panel-pane">
       {props.children}
     </div>
@@ -184,6 +185,7 @@ class App extends Component {
         </div>
         <div className="MiddleOfPage">
           <div className="leftSide">
+            <div className="leftTop">
               <div className="Seperator"><h2>Model Definition</h2></div>
               Number of jobs<br/>
               <input id="numJobs" type="text"></input><br/>
@@ -191,13 +193,14 @@ class App extends Component {
               Number of Processes<br/>
               <input id = "numProcesses" type="text"></input><br/>
               <button onClick={this.defineProcesses} >DEFINE</button><br/>
-              <div className="Seperator"><h2>Process Panel</h2></div>
+              
+          </div>
               <ProcessPanel >
+              
               {children}
               </ProcessPanel>
           </div>
-          <div className = "rightSide">
-          <div className="FORMAT">
+          <div className="middleColumn">
           <div className="Seperator"><h2>Format</h2></div>
           
               <h3>Distribution time</h3>
@@ -212,14 +215,12 @@ class App extends Component {
               X,(XX,X),...<br/></p>
           
           </div>
-            <div id="docPreview">
+          <div className = "rightSide">
             <div className="Seperator"><h2>Model.txt</h2></div>
               <button onClick={this.download}>DOWNLOAD</button>
-              <div className="saveandload">
-              </div>
-              <textarea id="modelFile" className="previewText" rows="42" placeholder="Preview of Model.txt">
+              <div className="saveandload"></div>
+              <textarea id="modelFile" className="previewText" placeholder="Preview of Model.txt">
               </textarea>
-            </div>
           </div>
         </div>
          <div className="BottomOfPage">© Benjamin Fields 2018</div>

@@ -3,6 +3,12 @@ h1,h2,h3{
   margin-top:2px;
 }
 
+html{
+  height:100vh;
+  max-height:100vh;
+  max-width: 100vw;
+}
+
 body{
   padding:0px;
   margin:0px;
@@ -13,26 +19,40 @@ body{
 }
 
 .leftSide{
-  margin-left:auto;
-  min-width: 220px;
+  width:33vw;
+  min-width: 175px;
   overflow: hidden;
-  height:90vh;
   padding-left:10px;
   padding-right:10px;
+  margin-left:auto;
   background-color: white;
 }
-.rightSide{
-  width:66%;
+
+.middleColumn{
+  width:20vw;
+  min-width: 280px;
+  background-color:#c5b9d5;
   padding-right:10px;
-  display:flex;
-  flex-wrap: nowrap;
+  padding-left:10px;
+  overflow: auto;
+
 }
+.rightSide{
+  width:47vw;
+  min-width: 200px;
+  height:90vh;
+  padding-right:10px;
+  overflow: auto;
+  padding-left:10px;
+  background-color: white;
+  margin-right: auto;
+}
+
 .MiddleOfPage{
-  width:100%;
+  width:100vw;
   display:flex;
+  height:90vh;
   flex-wrap: nowrap;
-  margin-top:10px;
-  margin-bottom:10px;
 }
 .Seperator{
   margin-top:5px;
@@ -42,6 +62,8 @@ body{
 
 #modelFile{
   width:95%;
+  height:70vh;
+  min-height: 340px;
 }
 
 .previewText{
@@ -49,13 +71,13 @@ body{
 }
 
 .TopOfPage{
-  width:100%;
+  width:100vw;
+  min-width: 710px;
   font-size: 24px;
   color:white;
-  height: 35px;
+  height: 5vh;
+  min-height: 30px;
   background-color: #311557;
-  margin-top:30px;
-  overflow: hidden;
   text-align: center;
 }
 
@@ -64,11 +86,9 @@ body{
 .BottomOfPage{
   color:white;
   font-size: 16px;
-  width:100%;
-  height:20px;
+  width:100vw;
+  height:5vh;
   text-align: center;
-  margin-top:5px;
-  bottom: 0;
   background-color: #311557;
 }
 
@@ -79,12 +99,12 @@ body{
 
 .App{
   padding:0px;
-  margin-top:-30px;
   min-height: 100vh;
   max-height: 100vh;
+  min-width: 710px;
   background-color:#1c053a;
-  width:100%;
-  min-width:860px;
+  overflow: auto;
+  width:100vw;
 }
 
 #root{
@@ -94,29 +114,17 @@ body{
   max-height: 100vh;
 }
 
-#docPreview{
-  margin-right:auto;
-  min-width: 200px;
-  background-color: white;
-  padding-left:10px;
-  padding-right:10px;
-  width:95%;
+.leftTop{
+  height:30vh;
+  min-height: 215px;
 }
-
-.FORMAT{
-  margin-left:20px;
-  margin-right:20px;
-  background-color:#c5b9d5;
-  padding-right:10px;
-  padding-left:10px;
-  height: fit-content;
-
-}
-
 .ProcessPanel{
+  padding-top:50px;
   overflow: auto;
-  height:stretch;
-  padding-bottom:300px;
+  height:55vh;
+  border:solid 1px black;
+  border-radius: 5px;
+  padding:10px;
 }
 
 .processData{
