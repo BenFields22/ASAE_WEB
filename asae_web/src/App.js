@@ -7,6 +7,7 @@ class Process extends Component{
     super(props);
     this.updateHandler  =   this.props.updateProc;
     this.state ={
+      show: "processData",
       number: props.number,
       processTime: 'na',
       positionType: 'na',
@@ -47,12 +48,15 @@ addToProcesses = () =>{
     up:this.state.upstream,
     down:this.state.downStream
   };
+  this.setState({
+    show:"hidden"
+  });
   this.updateHandler(p);
 }
 
   render(){
     return (
-      <div className="processData">{"PROCESS " + this.state.number}<br/>
+      <div className={this.state.show}>{"PROCESS " + this.state.number}<br/>
       
           ProcessTime:<br/>
           <input className="data" type="text" onChange={this.updateProcessTime}></input><br/>
@@ -92,8 +96,8 @@ class App extends Component {
 
   componentDidMount() {
     //example of using fetch api
-    fetch('/AddView')
-      .then(res => res.json())
+    fetch('http://localhost:8080/AddView')
+      .then((res) => res.json())
   }
 
   componentWillUnmount() {
@@ -101,9 +105,9 @@ class App extends Component {
   }
 
   getViews = () => {
-    fetch('/modelCount')
-      .then(res => res.json())
-      .then(mycount => alert('Views: '+mycount.Modelcount));
+    fetch('http://localhost:8080/modelCount')
+      .then((res) => res.json())
+      .then((mycount) => {alert('Views: '+mycount.Modelcount)});
   }
 
   preview = ()=>{
@@ -152,17 +156,18 @@ class App extends Component {
   }
 
   updateProcesses = (val) => {
-    this.setState({processes:[...this.state.processes, val]});
-    //alert("Successfully added");
-    //this.preview();
+    this.setState({
+      processes:[...this.state.processes, val]
+    },()=>{
+      this.preview();
+    });
   }
 
 
   defineProcesses = () =>{
     var jobs = document.getElementById("numJobs").value;
     var proc = document.getElementById("numProcesses").value;
-    setTimeout(() => {this.setState({numJobs: jobs,numProcesses:proc,numChildren:proc}, function(){
-      //alert(this.state.numJobs+ ' '+this.state.numProcesses); 
+    setTimeout(() => {this.setState({numJobs: jobs,numProcesses:proc,numChildren:proc}, function(){ 
     });}, 5);
   }
   render() {
@@ -201,10 +206,11 @@ class App extends Component {
                 <h3>Position Type</h3>
               0-FRONT 1-MIDDLE 2-TERMINAL<br/> 
               <h3>DownStreamConnections</h3>
-              numberofConnection 1 digit,
-              PID 2digits(percentage in three sig figs such as 0.00) buffer capacity with two digits, repeat<br/>
+              number,PID(percentage)buffer_capacity,...<br/>
+              X,XX(X.XX)XX,...<br/>
               <h3>UpstreamConnections</h3>
-              numberofConnections 1 digit,(PID 2 digits,Connecting Position index), repeat<br/>
+              Number,(PID,Buffer_Index),...<br/>
+              X,(XX,X),...<br/>
             <div className="Seperator"><h2>Model.txt</h2></div>
             <div id="docPreview">
               <button onClick={this.preview}>PREVIEW</button>

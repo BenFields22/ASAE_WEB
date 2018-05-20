@@ -54,3 +54,7 @@ h1,h2,h3{
   border: solid 1px black;
 }
 
+.hidden{
+  display:none;
+}
+
