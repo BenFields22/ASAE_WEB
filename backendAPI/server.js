@@ -6,6 +6,11 @@ app.use(cors({
   origin: 'http://www.localhost:5000'
 }));
 
+app.use(function(req,res,next){
+  console.log("Received a request with URL ",req.url);
+  next();
+})
+
 var count = 0;
 var saved = [];
 
